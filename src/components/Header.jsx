@@ -110,16 +110,16 @@ export default function Header() {
           <img src="/images/logo/logo_white_bg.png" width="190px" alt="" />
 
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className="link">Home</a>
+            <Link to={"/"} className="link">Home</Link>
 
             <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
               <HoverCard.Target>
-                <a href="#service-section" className="link">
+                <Link to="/services" className="link">
                   <Center inline>
                     <Box component="span" mr={5}>Services</Box>
                     <IconChevronDown size={16} color={theme.colors.red[6]} />
                   </Center>
-                </a>
+                </Link>
               </HoverCard.Target>
 
               <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
@@ -145,8 +145,8 @@ export default function Header() {
               </HoverCard.Dropdown>
             </HoverCard>
 
-            <a href="#" className="link">About</a>
-            <a href="#" className="link">Contact Us</a>
+            <Link to={"/about"} className="link">About</Link>
+            <Link to={"/contact"} className="link">Contact Us</Link>
           </Group>
 
 

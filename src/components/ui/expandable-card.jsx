@@ -88,7 +88,7 @@ export function ExpandableCard({
                     </motion.p>
                     <motion.h3
                       layoutId={`title-${title}-${id}`}
-                      className="text-2xl font-semibold text-gray-800"
+                      className="text-2xl font-semibold font-wave text-gray-800"
                     >
                       {title}
                     </motion.h3>
@@ -135,7 +135,7 @@ export function ExpandableCard({
   <motion.button
     onClick={() => setActive(true)}
     whileTap={{ scale: 0.97 }}
-    className="text-sm font-medium text-blue-600 hover:underline transition"
+    className="text-sm font-medium text-red-600 hover:underline transition"
   >
     <Link to={`${title.split(' ').join('-')}`}> Show Details →</Link>
   </motion.button>
@@ -177,7 +177,7 @@ export function ExpandableCard({
               </motion.p>
               <motion.h3
                 layoutId={`title-${title}-${id}`}
-                className="text-lg font-semibold text-gray-800"
+                className="text-lg font-semibold font-wave text-gray-800"
               >
                 {title}
               </motion.h3>

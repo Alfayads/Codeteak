@@ -28,7 +28,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
+      className="h-[80vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]">
       <Header />
       <motion.div
         style={{
@@ -59,9 +59,9 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div
-      className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
+      className="max-w-7xl relative mx-auto   px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-black">
-        The Ultimate <br /> <span className="text-red-600">Development Team</span>
+        The Ultimate <br /> <span className="text-red-600 font-langits tracking-wider">Development Team</span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-gray-600">
   Our team is a collective of visionary developers, creative designers, and strategic thinkers who are committed to delivering exceptional digital experiences. With expertise in the latest technologies, we craft scalable, high-performance solutions that drive results. From intuitive UI/UX design to robust backend development, we approach every project with precision, passion, and purpose. We don’t just build products—we build brands, relationships, and impact.

@@ -1,9 +1,10 @@
 import React from 'react'
+import TrueFocus from '../components/ui/TrueFocus'
 
 const NotFound = () => {
   return (
-    <div>
-      <h1>Not Found Page</h1>
+    <div className='h-[36vh] flex flex-col items-center justify-center'>
+      <TrueFocus />
     </div>
   )
 }

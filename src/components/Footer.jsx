@@ -3,6 +3,7 @@ import { ActionIcon, Container, Group, Text } from '@mantine/core';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import "./css/Footer.css"
 
+
 const data = [
   {
     title: 'About',
@@ -59,7 +60,7 @@ export default function Footer() {
     <footer className="footer">
       <Container className="inner">
         <div className="logo">
-          <MantineLogo size={30} />
+          <img src="/images/logo/logo_nobg.png" alt="" width={"50px"} />
           <Text size="xs" c="dimmed" className="description">
             Build fully functional accessible web applications faster than ever
           </Text>
