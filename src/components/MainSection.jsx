@@ -2,7 +2,7 @@ import { Badge } from "@mantine/core"
 import HeroSection from "./HeroSection"
 import { MacbookScroll } from "./ui/MacbookScroll"
 import InfiniteRibbonDemo from "./InfiniteRibbon"
-import { ServiceSection } from "./ServiceSection"
+
 import { TeamParallax } from "./TeamParallax"
 import { CodeteakHoverEffect } from "./CodeteakHoverEffect"
 import { TestimonialSection } from "./TestimonialSection"
@@ -12,6 +12,7 @@ import Footer from "./Footer"
 import Contact from "../pages/Contact"
 import { ContactHero } from "./ContactHighlight"
 import { WorldMap } from "./ui/worldMap"
+import ServiceSection from "./ServiceSection"
 
 
 
@@ -23,7 +24,7 @@ const MainSection = () => {
         <HeroSection />
       </section>
 
-      <section className="h-[50vh] overflow-hidden" >
+      <section className="md:h-[50vh] overflow-hidden" >
 <WorldMap
         dots={[
           {
@@ -61,7 +62,7 @@ const MainSection = () => {
       </section>
 
       {/* Services Section */}
-      <section className=" py-16">
+      <section className="md:py-16">
   <ServiceSection />
 </section>
 

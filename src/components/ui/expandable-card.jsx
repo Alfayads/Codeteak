@@ -1,24 +1,18 @@
 "use client";
 
-import * as React from "react";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "../../lib/utils"; // Adjust this import as needed
 import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 
-export function ExpandableCard({
-  title,
-  src,
-  description,
-  children,
-  className,
-  classNameExpanded,
-  ...props
-}) {
-  const [active, setActive] = React.useState(false);
-  const cardRef = React.useRef(null);
+
+export function ExpandableCard({ title, src, description, children, className, classNameExpanded }) {
+  const [active, setActive] = useState(false);
+  const cardRef = useRef(null);
   const id = React.useId();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key === "Escape") {
         setActive(false);
@@ -65,7 +59,6 @@ export function ExpandableCard({
                 "w-full max-w-3xl h-full sm:h-auto flex flex-col overflow-auto sm:rounded-2xl bg-white shadow-lg relative",
                 classNameExpanded
               )}
-              {...props}
             >
               <motion.div layoutId={`image-${title}-${id}`}>
                 <div className="relative">
@@ -88,7 +81,7 @@ export function ExpandableCard({
                     </motion.p>
                     <motion.h3
                       layoutId={`title-${title}-${id}`}
-                      className="text-2xl font-semibold font-wave text-gray-800"
+                      className="text-2xl font-semibold text-gray-800"
                     >
                       {title}
                     </motion.h3>
@@ -132,17 +125,18 @@ export function ExpandableCard({
                   {children}
                 </motion.div>
                 <div className="pt-4 flex justify-end">
-  <motion.button
-    onClick={() => setActive(true)}
-    whileTap={{ scale: 0.97 }}
-    className="text-sm font-medium text-red-600 hover:underline transition"
-  >
-    <Link to={`${title.split(' ').join('-')}`}> Show Details →</Link>
-  </motion.button>
-</div>
+                  <motion.button
+                    onClick={() => setActive(true)}
+                    whileTap={{ scale: 0.97 }}
+                    className="text-sm font-medium text-red-600 hover:underline transition"
+                  >
+                    <Link to={`/services/${title.toLowerCase().replace(/\s+/g, '-')}`}>
+                      Show Details →
+                    </Link>
+                  </motion.button>
+                </div>
               </div>
             </motion.div>
-            
           </div>
         )}
       </AnimatePresence>
@@ -177,7 +171,7 @@ export function ExpandableCard({
               </motion.p>
               <motion.h3
                 layoutId={`title-${title}-${id}`}
-                className="text-lg font-semibold font-wave text-gray-800"
+                className="text-lg font-semibold text-gray-800"
               >
                 {title}
               </motion.h3>
@@ -207,14 +201,10 @@ export function ExpandableCard({
                   <path d="M12 5v14" />
                 </svg>
               </motion.div>
-              
             </motion.button>
           </div>
-          
         </div>
-        
       </motion.div>
-      
     </>
   );
 }

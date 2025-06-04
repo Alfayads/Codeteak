@@ -169,21 +169,16 @@ export default function Header() {
 
           <UnstyledButton className="link" onClick={toggleLinks}>
             <Center inline>
-              <Box component="span" mr={5}>Features</Box>
+              <Box component="span" mr={5}><Link to={"/services"}>Services</Link> </Box>
               <IconChevronDown size={16} color={theme.colors.red[6]} />
             </Center>
           </UnstyledButton>
 
           <Collapse in={linksOpened}>{links}</Collapse>
 
-          <a href="#" className="link">Learn</a>
-          <a href="#" className="link">Academy</a>
+          <Link to={"/about"} className="link">About</Link>
+          <Link to={"/contact"} className="link">Contact</Link>
 
-          <Divider my="sm" />
-          <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
         </ScrollArea>
       </Drawer>
     </Box>
